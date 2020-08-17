@@ -1,0 +1,140 @@
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    chmod 0660 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+    install_keyring
+
+on fs
+    start hwservicemanager
+    start servicemanager
+
+# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
+service sbinqseecomd /sbin/qseecomd
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service hwservicemanager /sbin/hwservicemanager
+    user root
+    group root readproc
+    disabled
+    onrestart setprop hwservicemanager.ready false
+    seclabel u:r:recovery:s0
+
+service servicemanager /sbin/servicemanager
+    user root
+    group root readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service keystore_auth /sbin/keystore_auth
+    oneshot
+    user system
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keystore /sbin/keystore /tmp/misc/keystore
+    user root
+    group root drmrpc readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+####
+on property:hwservicemanager.ready=true
+    start sbinqseecomd
+
+on property:vendor.sys.listeners.registered=true
+    wait /sbin/fingerprint_ready 8
+    start keymaster-4-0
+    start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:ro.crypto.state=unencrypted
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:twrp.decrypt.done=true && property:twrp.all.users.decrypted=true
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+
+# fix magisk.zip install
+service fixmagisk /init.magisk.sh
+    #oneshot
+    #disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+
+
+
+
+
+
+# read ro.build.fingerprint from system, setprop it. for ota
+service fingerprintid /init.fingerprintid.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+on early-init
+    setprop recovery.perf.mode 1
+    start fingerprintid
+
+on boot
+    setprop recovery.perf.mode 0
+    # Enable double-tap to wake
+    #write /sys/devices/virtual/touch/tp_dev/gesture_on 1
+    # Enable OTG
+    #write /sys/class/power_supply/usb/otg_switch 1
+
+on property:recovery.perf.mode=1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu4/online 1
+    write /sys/devices/system/cpu/cpu5/online 1
+    write /sys/devices/system/cpu/cpu6/online 1
+    write /sys/devices/system/cpu/cpu7/online 1
+
+on property:recovery.perf.mode=0
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 1
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 1
+    write /sys/devices/system/cpu/cpu7/online 0
