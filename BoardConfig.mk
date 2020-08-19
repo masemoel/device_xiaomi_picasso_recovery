@@ -18,7 +18,7 @@
 
 DEVICE_PATH := device/xiaomi/picasso
 
-# For building with minimal manifest
+# Ignore missing dependencies
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
@@ -58,6 +58,7 @@ BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --dt $(TARGET_PREBUILT_DTB)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 # System as root
@@ -65,9 +66,8 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Platform
-# Fix this
-#TARGET_BOARD_PLATFORM := 
-#TARGET_BOARD_PLATFORM_GPU := 
+TARGET_BOARD_PLATFORM := sm7250
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno620
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := picasso
