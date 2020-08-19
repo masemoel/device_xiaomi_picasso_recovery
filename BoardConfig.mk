@@ -147,3 +147,5 @@ TW_INCLUDE_NTFS_3G := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
+TW_HAS_EDL_MODE := true
+TW_DEFAULT_DEVICE_NAME := Redmi K30 5G
