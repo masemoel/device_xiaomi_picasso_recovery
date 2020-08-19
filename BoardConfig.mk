@@ -80,6 +80,10 @@ QCOM_BOARD_PLATFORMS += sm7250
 # Assert
 TARGET_OTA_ASSERT_DEVICE := picasso
 
+# AVB
+BOARD_AVB_ENABLE := true
+BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+
 # Partitions
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728 # This is the maximum known partition size, but it can be higher, so we just omit it
 
