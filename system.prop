@@ -1,6 +1,3 @@
-ro.display.series=Redmi K30 5G
-ro.product.board=sm7250
-ro.board.platform=sm7250
 sys.usb.controller=a600000.dwc3
 sys.usb.rndis.func.name=rndis_bam
 sys.usb.rmnet.func.name=rmnet_bam
