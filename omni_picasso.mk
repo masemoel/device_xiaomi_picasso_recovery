@@ -25,15 +25,6 @@ DEVICE_PATH := device/xiaomi/picasso
 $(call inherit-product, vendor/pb/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit Telephony packages
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit language packages
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# Inherit 64bit support
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
 
 # Device identifier. This must come after all inclusions
