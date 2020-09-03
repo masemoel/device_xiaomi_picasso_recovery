@@ -152,3 +152,7 @@ TW_USE_PATCH_AVB2_BOOT := true
 TW_USE_LEDS_HAPTICS := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_NO_USB_STORAGE := true
+
+# If build on minimal-manifest sources
+ALLOW_MISSING_DEPENDENCIES=true
+TARGET_SUPPORTS_64_BIT_APPS := true
