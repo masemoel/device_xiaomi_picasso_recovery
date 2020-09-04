@@ -21,8 +21,11 @@ PRODUCT_RELEASE_NAME := picasso
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/picasso
 
-# Inherit some common PitchBlack stuff.
-$(call inherit-product, vendor/pb/config/common.mk)
+# Specify phone tech before including full_phone
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
