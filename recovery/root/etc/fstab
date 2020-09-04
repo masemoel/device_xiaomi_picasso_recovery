@@ -1,0 +1,14 @@
+/dev/block/sda34 /data f2fs rw 0 0
+/dev/block/sda30 /cache ext4 rw 0 0
+/dev/block/mapper/system /system_root ext4 rw 0 0
+/dev/block/mapper/vendor /vendor ext4 rw 0 0
+/dev/block/mapper/product /product ext4 rw 0 0
+/dev/block/mapper/odm /odm ext4 rw 0 0
+/dev/block/sde48 /firmware vfat rw 0 0
+/dev/block/sda23 /persist ext4 rw 0 0
+/dev/block/sde33 /bt_firmware vfat rw 0 0
+/dev/block/sde47 /dsp ext4 rw 0 0
+/dev/block/sda32 /cust ext4 rw 0 0
+/dev/block/sda18 /metadata ext4 rw 0 0
+/dev/block/sda13 /logfs vfat rw 0 0
+ /usb-otg vfat rw 0 0
