@@ -1,3 +1,29 @@
+# Copyright (c) 2009-2012, 2014-2015, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -8,9 +34,12 @@ on fs
     chown system system /dev/ion
     install_keyring
 
-on fs
+on early-fs
+    start vold
+
+on init
     start hwservicemanager
-    start servicemanager
+    setprop crypto.ready 1
 
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
@@ -21,7 +50,7 @@ service sbinqseecomd /sbin/qseecomd
 
 service hwservicemanager /sbin/hwservicemanager
     user root
-    group root readproc
+    group root
     disabled
     onrestart setprop hwservicemanager.ready false
     seclabel u:r:recovery:s0
@@ -39,6 +68,7 @@ service keystore_auth /sbin/keystore_auth
     disabled
     seclabel u:r:recovery:s0
 
+# keystore is started and stopped on demand by TWRP
 service keystore /sbin/keystore /tmp/misc/keystore
     user root
     group root drmrpc readproc
@@ -53,88 +83,23 @@ service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
 
 service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     user root
-    group root drmrpc
+    group root
     disabled
     seclabel u:r:recovery:s0
 
-####
-on property:hwservicemanager.ready=true
+on boot
+    setprop sys.usb.config adb
+
+on property:crypto.ready=0
+    stop sbinqseecomd
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+
+on property:crypto.ready=1
     start sbinqseecomd
 
 on property:vendor.sys.listeners.registered=true
-    wait /sbin/fingerprint_ready 8
     start keymaster-4-0
     start gatekeeper-1-0
-
-on property:ro.crypto.state=unsupported
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:ro.crypto.state=unencrypted
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:twrp.decrypt.done=true && property:twrp.all.users.decrypted=true
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-
-# fix magisk.zip install
-service fixmagisk /init.magisk.sh
-    #oneshot
-    #disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-
-
-
-
-
-
-
-# read ro.build.fingerprint from system, setprop it. for ota
-service fingerprintid /init.fingerprintid.sh
-    oneshot
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-
-on early-init
-    setprop recovery.perf.mode 1
-    start fingerprintid
-
-on boot
-    setprop recovery.perf.mode 0
-    # Enable double-tap to wake
-    #write /sys/devices/virtual/touch/tp_dev/gesture_on 1
-    # Enable OTG
-    #write /sys/class/power_supply/usb/otg_switch 1
-
-on property:recovery.perf.mode=1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu4/online 1
-    write /sys/devices/system/cpu/cpu5/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 1
-
-on property:recovery.perf.mode=0
-    write /sys/devices/system/cpu/cpu1/online 0
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 0
-    write /sys/devices/system/cpu/cpu4/online 1
-    write /sys/devices/system/cpu/cpu5/online 0
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 0
+    start servicemanager
