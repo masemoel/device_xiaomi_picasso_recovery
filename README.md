@@ -12,9 +12,6 @@ Download PBRP's source and picasso's repos. Your local manifest should be someth
 
 <!-- Device tree -->
   <project name="masemoel/device_xiaomi_picasso_recovery" path="device/xiaomi/picasso" remote="github" revision="android-10.0_pbrp"/>
-  
-<!-- Kernel -->
-  <project name="PeterCxy/android_kernel_xiaomi_sm7250" path="kernel/xiaomi/picasso" remote="github" revision="lineage-17.1"/>
 
 </manifest>
 ```
@@ -22,7 +19,6 @@ Download PBRP's source and picasso's repos. Your local manifest should be someth
 Then go to the source folder and run:
 
 ```bash
-export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 lunch omni_picasso-eng
 mka recoveryimage
