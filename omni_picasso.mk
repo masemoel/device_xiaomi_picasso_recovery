@@ -18,11 +18,7 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := picasso
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/picasso
-
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
