@@ -12,6 +12,3 @@ ro.adb.secure=0
 fbe.metadata.wrappedkey=true
 ro.sf.lcd_density=440
 ro.treble.enabled=true
-vendor.gatekeeper.disable_spu=true
-ro.boot.init_rc=/init.rc
-persist.sys.timezone=Asia/Shanghai
