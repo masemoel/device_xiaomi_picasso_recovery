@@ -1,6 +1,6 @@
 ![PBRP](https://img.xda-cdn.com/VEMOLtC4mZpaAoZQLOAUFyffFog=/https%3A%2F%2Fraw.githubusercontent.com%2Fshovon668%2Fxda-template%2Fr3%2Fpbrp3-banner-xda.png "PBRP")
 
-PitchBlackRecoveryProject (PBRP) 3.0.0 for the Redmi K30 5G (picasso)
+PitchBlack Recovery Project (PBRP) 3.0.0 for the Redmi K30 5G (picasso)
 ======================================
 
 # How to build

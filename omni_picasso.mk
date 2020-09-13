@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2020 The Android Open Source Project
-# Copyright (C) 2020 The TWRP Open Source Project
+# Copyright (C) 2020 PitchBlack Recovery Project
 # Copyright (C) 2020 SebaUbuntu's TWRP device tree generator 
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
