@@ -19,8 +19,10 @@ odm               /odm        ext4                                       display
 /firmware_image   emmc        /dev/block/bootdevice/by-name/modem        flags=display="Firmware";flashimg=1;backup=1
 /persist          ext4        /dev/block/bootdevice/by-name/persist      flags=display="Persist"
 /persist_image    emmc        /dev/block/bootdevice/by-name/persist      flags=display="Persist";flashimg=1;backup=1
-/bt_firmware      vfat        /dev/block/bootdevice/by-name/bluetooth    flags=display="Bluetooth";backup=1;subpartitionof=/modem
-/dsp              ext4        /dev/block/bootdevice/by-name/dsp          flags=display="DSP";backup=1;subpartitionof=/modem
+/bt_firmware      vfat        /dev/block/bootdevice/by-name/bluetooth    flags=display="Bluetooth";backup=1
+/bt_firm_image    emmc        /dev/block/bootdevice/by-name/bluetooth    flags=display="Bluetooth";flashimg=1
+/dsp              ext4        /dev/block/bootdevice/by-name/dsp          flags=display="DSP";backup=1
+/dsp_image        emmc        /dev/block/bootdevice/by-name/dsp          flags=display="DSP";flashimg=1
 /cust             ext4        /dev/block/bootdevice/by-name/cust         flags=display="Cust";backup=1
 /cust_image       emmc        /dev/block/bootdevice/by-name/cust         flags=display="Cust";flashimg=1
 /metadata         ext4        /dev/block/bootdevice/by-name/metadata     flags=display="Metadata";backup=1
