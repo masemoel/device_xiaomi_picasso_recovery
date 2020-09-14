@@ -41,4 +41,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
+    ro.vendor.build.security_patch=2099-12-31 \
+    ro.build.date=Thu May  7 00:11:59 CST 2020 \
+    ro.build.date.utc=1588781519
