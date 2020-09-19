@@ -24,8 +24,6 @@ DEVICE_PATH := device/xiaomi/picasso
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := picasso
 PRODUCT_NAME := omni_picasso
