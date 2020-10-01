@@ -12,7 +12,3 @@ ro.adb.secure=0
 fbe.metadata.wrappedkey=true
 ro.sf.lcd_density=385
 ro.treble.enabled=true
-ro.build.date=Thu May  7 00:11:59 CST 2020
-ro.build.date.utc=1588781519
-ro.product.device=picasso
-ro.build.product=picasso
