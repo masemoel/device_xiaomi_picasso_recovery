@@ -11,7 +11,7 @@ Download PBRP's source and picasso's repos. Your local manifest should be someth
 <manifest>
 
 <!-- Device tree -->
-  <project name="masemoel/device_xiaomi_picasso_recovery" path="device/xiaomi/picasso" remote="github" revision="android-10.0_pbrp"/>
+  <project name="Redmi-K30-5G/device_xiaomi_picasso_recovery" path="device/xiaomi/picasso" remote="github" revision="android-10.0_pbrp"/>
 
 </manifest>
 ```
@@ -19,9 +19,7 @@ Download PBRP's source and picasso's repos. Your local manifest should be someth
 Then go to the source folder and run:
 
 ```bash
-. build/envsetup.sh
-lunch omni_picasso-eng
-mka recoveryimage
+. build/envsetup.sh && lunch omni_picasso-eng && mka recoveryimage
 ```
 
 # Device specifications
