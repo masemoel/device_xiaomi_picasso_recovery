@@ -4,7 +4,7 @@
 
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
-# <mount_point>  <fstype>  <device>        <device2>                  <flags>
+# <mount_point>   <fstype>    <device>         <device2>                 <flags>
 system            /system     ext4                                       display="System";logical
 vendor            /vendor     ext4                                       display="Vendor";logical
 product           /product    ext4                                       display="Product";logical
