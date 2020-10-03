@@ -27,7 +27,7 @@
 
 # non-A/B recovery.fstab variant.
 
-#device         mount point      fstype        [device2] [length=]
+#device                                    mount point     fstype  [device2]                                            [length=]
 
 system                                     /system         ext4    ro,barrier=1,discard                                 wait,avb=vbmeta_system,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
 product                                    /product        ext4    ro,barrier=1,discard                                 wait,avb=vbmeta_system,first_stage_mount
