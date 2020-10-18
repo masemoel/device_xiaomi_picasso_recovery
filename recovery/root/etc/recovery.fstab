@@ -34,7 +34,7 @@ product                                    /product        ext4    ro,barrier=1,
 vendor                                     /vendor         ext4    ro,barrier=1,discard                                 wait,avb,logical,first_stage_mount
 odm                                        /odm            ext4    ro,barrier=1,discard                                 wait,avb,logical,first_stage_mount
 /dev/block/by-name/metadata                /metadata       ext4    noatime,nosuid,nodev,discard                         wait,formattable,first_stage_mount
-/dev/block/bootdevice/by-name/userdata     /data           f2fs    noatime,nosuid,nodev,nodiscard,reserve_root=32768,resgid=1065,fsync_mode=nobarrier    latemount,wait,check,formattable,fileencryption=ice,keydirectory=/metadata/vold/metadata_encryption,wrappedkey,quota,reservedsize=128M,checkpoint=fs
+/dev/block/bootdevice/by-name/userdata     /data           f2fs    noatime,nosuid,nodev,nodiscard,reserve_root=32768,resgid=1065,fsync_mode=nobarrier    latemount,wait,check,formattable,fileencryption=ice,wrappedkey,quota,reservedsize=128M,checkpoint=fs
 /dev/block/bootdevice/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered          wait,check
 /dev/block/mmcblk0p1                       /sdcard         vfat    nosuid,nodev                                         wait
 /dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                             defaults
