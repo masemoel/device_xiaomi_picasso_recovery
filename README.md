@@ -3,6 +3,8 @@
 PitchBlack Recovery Project (PBRP) 3.0.0 for the Redmi K30 5G (picasso)
 ======================================
 
+Note that this is still experimental as Android 11 source for PBRP hasn't been still released!
+
 # How to build
 Download PBRP's source and picasso's repos. Your local manifest should be something like:
 
@@ -11,7 +13,7 @@ Download PBRP's source and picasso's repos. Your local manifest should be someth
 <manifest>
 
 <!-- Device tree -->
-  <project name="Redmi-K30-5G/device_xiaomi_picasso_recovery" path="device/xiaomi/picasso" remote="github" revision="android-10.0_pbrp"/>
+  <project name="Redmi-K30-5G/device_xiaomi_picasso_recovery" path="device/xiaomi/picasso" remote="github" revision="wip/android-11.0_pbrp"/>
 
 </manifest>
 ```
