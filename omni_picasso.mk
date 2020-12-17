@@ -28,6 +28,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
     $(LOCAL_PATH)/prebuilt/dtb:dtb.img
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := picasso
 PRODUCT_NAME := omni_picasso

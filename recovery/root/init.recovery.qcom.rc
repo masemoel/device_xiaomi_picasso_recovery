@@ -38,26 +38,12 @@ on early-fs
     start vold
 
 on init
-    start hwservicemanager
     setprop crypto.ready 1
 
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
     user root
     group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service hwservicemanager /sbin/hwservicemanager
-    user root
-    group root
-    disabled
-    onrestart setprop hwservicemanager.ready false
-    seclabel u:r:recovery:s0
-
-service servicemanager /sbin/servicemanager
-    user root
-    group root readproc
     disabled
     seclabel u:r:recovery:s0
 
@@ -87,9 +73,6 @@ service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     disabled
     seclabel u:r:recovery:s0
 
-on boot
-    setprop sys.usb.config adb
-
 on property:crypto.ready=0
     stop sbinqseecomd
     stop keymaster-4-0
@@ -102,4 +85,8 @@ on property:crypto.ready=1
 on property:vendor.sys.listeners.registered=true
     start keymaster-4-0
     start gatekeeper-1-0
+
+on property:sys.usb.config=fastboot
     start servicemanager
+    start hwservicemanager
+    restart fastbootd
