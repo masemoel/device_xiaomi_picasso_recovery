@@ -18,20 +18,21 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := picasso
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/picasso
 
-# Inherit some common PitchBlack stuff.
-$(call inherit-product, vendor/pb/config/common.mk)
+# Inherit some common OrangeFox stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
-    $(LOCAL_PATH)/prebuilt/dtb:dtb.img
 
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery
+
+# QCOM decryption
+PRODUCT_PACKAGES_ENG += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := picasso
