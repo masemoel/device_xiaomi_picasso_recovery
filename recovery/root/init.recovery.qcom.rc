@@ -38,11 +38,25 @@ on early-fs
     start vold
 
 on init
+    start hwservicemanager
     setprop crypto.ready 1
 
 service sbinqseecomd /sbin/qseecomd
     user root
     group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service hwservicemanager /system/bin/hwservicemanager
+    user root
+    group root
+    disabled
+    onrestart setprop hwservicemanager.ready false
+    seclabel u:r:recovery:s0
+
+service servicemanager /system/bin/servicemanager
+    user root
+    group root readproc
     disabled
     seclabel u:r:recovery:s0
 
@@ -72,6 +86,18 @@ service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     disabled
     seclabel u:r:recovery:s0
 
+service unified-script /sbin/unified-script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+on boot
+    setprop sys.usb.config adb
+    chmod 0777 /sbin/unified-script.sh
+    start unified-script
+
 on property:crypto.ready=0
     stop sbinqseecomd
     stop keymaster-4-0
@@ -84,8 +110,4 @@ on property:crypto.ready=1
 on property:vendor.sys.listeners.registered=true
     start keymaster-4-0
     start gatekeeper-1-0
-
-on property:sys.usb.config=fastboot
     start servicemanager
-    start hwservicemanager
-    restart fastbootd
