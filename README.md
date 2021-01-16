@@ -1,17 +1,17 @@
-![PBRP](https://img.xda-cdn.com/VEMOLtC4mZpaAoZQLOAUFyffFog=/https%3A%2F%2Fraw.githubusercontent.com%2Fshovon668%2Fxda-template%2Fr3%2Fpbrp3-banner-xda.png "PBRP")
+![OFRP](https://comments.bot/userpic/709d26cf27f7ff8638f6c.jpg "OFRP")
 
-PitchBlack Recovery Project (PBRP) 3.0.0 for Redmi K30 5G (picasso)
+OrangeFox Recovery Project (OFRP) R11 for Redmi K30 5G (picasso)
 ======================================
 
 # How to build
-Download PBRP's source and picasso's repos. Your local manifest should be something like:
+Download OFRP's source and picasso's repos. Your local manifest should be something like:
 
 ```bash
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
 <!-- Device tree -->
-  <project name="Redmi-K30-5G/device_xiaomi_picasso_recovery" path="device/xiaomi/picasso" remote="github" revision="android-11.0_pbrp"/>
+  <project name="Redmi-K30-5G/device_xiaomi_picasso_recovery" path="device/xiaomi/picasso" remote="github" revision="android-11.0_ofrp"/>
 
 </manifest>
 ```
