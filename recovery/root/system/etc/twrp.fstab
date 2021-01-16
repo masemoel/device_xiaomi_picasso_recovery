@@ -19,7 +19,7 @@ odm               /odm        ext4                                       display
 /persist          ext4        /dev/block/bootdevice/by-name/persist      flags=display="Persist";backup=1;flashimg=1
 /bt_firmware      vfat        /dev/block/bootdevice/by-name/bluetooth    flags=display="Bluetooth";backup=1;flashimg=1
 /dsp              ext4        /dev/block/bootdevice/by-name/dsp          flags=display="DSP";backup=1;flashimg=1
-/cust             ext4        /dev/block/bootdevice/by-name/cust         flags=display="Cust";backup=1;flashimg=1;wipeingui
+/cust             ext4        /dev/block/bootdevice/by-name/cust         flags=display="Cust";backup=1;flashimg=1
 /metadata         ext4        /dev/block/bootdevice/by-name/metadata     flags=display="Metadata";backup=1;flashimg=1;wrappedkey;wipeingui
 /splash           emmc        /dev/block/bootdevice/by-name/splash       flags=display="Splash";backup=1;flashimg=1
 /logo             emmc        /dev/block/bootdevice/by-name/logo         flags=display="Logo";backup=1;flashimg=1
