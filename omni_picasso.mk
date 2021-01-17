@@ -26,6 +26,11 @@ DEVICE_PATH := device/xiaomi/picasso
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
+
 # QCOM decryption
 PRODUCT_PACKAGES_ENG += \
     qcom_decrypt \
