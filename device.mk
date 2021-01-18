@@ -17,21 +17,24 @@
 # limitations under the License.
 #
 
+PRODUCT_RELEASE_NAME := picasso
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/picasso
-$(call inherit-product, device/xiaomi/picasso/device.mk)
 
-# Inherit some common OrangeFox stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := picasso
-PRODUCT_NAME := omni_picasso
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi K30 5G
-PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_RELEASE_NAME := Redmi K30 5G
+# QCOM decryption
+PRODUCT_PACKAGES_ENG += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="Redmi/picasso/picasso:10/QKQ1.191117.002/20.1.13:user/release-keys" \
-    PRIVATE_BUILD_DESC="picasso-user 10 QKQ1.191117.002 20.1.13 release-keys"
+# Stock flashable zips
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.allow.mock.location=1
+
+# HACK: Set vendor patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31
