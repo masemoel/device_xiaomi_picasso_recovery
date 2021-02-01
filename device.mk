@@ -27,9 +27,9 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock.recovery
 
 # QCOM decryption
-#PRODUCT_PACKAGES_ENG += \
-#    qcom_decrypt \
-#    qcom_decrypt_fbe
+PRODUCT_PACKAGES_ENG += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
 
 # Stock flashable zips
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
