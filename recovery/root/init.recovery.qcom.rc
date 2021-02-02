@@ -40,6 +40,8 @@ on early-fs
     start vold
 
 on init
+    mkdir /tmp/install
+    mkdir /tmp/install/bin
     start hwservicemanager
     setprop crypto.ready 1
     chmod 0777 /init.recovery.qcom.sh
