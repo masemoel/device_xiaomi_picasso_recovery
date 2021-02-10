@@ -21,11 +21,6 @@ PRODUCT_RELEASE_NAME := picasso
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/picasso
 
-# Assert date
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.date=Tue May 3 20:05:48 KST 2016 \
-    ro.build.date.utc=1462273548
-
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
