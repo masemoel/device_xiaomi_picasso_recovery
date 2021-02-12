@@ -21,7 +21,7 @@ FDEVICE="picasso"
 
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
-    if [ -n "$chkdev" ]; then 
+    if [ -n "$chkdev" ]; then
         FOX_BUILD_DEVICE="$FDEVICE"
     else
         chkdev=$(set | grep BASH_ARGV | grep -w $FDEVICE)
@@ -34,20 +34,19 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
+    export TARGET_ARCH=arm64
     export FOX_USE_NANO_EDITOR=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
     export OF_NO_SPLASH_CHANGE=1
-    export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
-    export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
+    export OF_DONT_PATCH_ENCRYPTED_DEVICE=0; # Temporal!
     export OF_DISABLE_DM_VERITY_FORCED_ENCRYPTION=1
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
-    export OF_NO_MIUI_PATCH_WARNING=1
     export FOX_DISABLE_APP_MANAGER=1
     export OF_MAINTAINER=masemoel
-    export FOX_VERSION=1.3
+    export FOX_VERSION=R11_1.3
     export OF_SCREEN_H=2460
-    export OF_STATUS_H=95
+    export OF_STATUS_H=65
     export OF_ALLOW_DISABLE_NAVBAR=0
     export OF_PATCH_AVB20=1
     export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
@@ -65,7 +64,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_R11=1
     export OF_USE_TWRP_SAR_DETECT=1
     export OF_TARGET_DEVICES=picasso,picasso_48m
-    export OF_DONT_KEEP_LOG_HISTORY=1
     export OF_USE_GREEN_LED=0
     export FOX_DELETE_AROMAFM=1
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
@@ -73,7 +71,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_USE_BASH_SHELL=1
     export FOX_ASH_IS_BASH=1
     export FOX_USE_TAR_BINARY=1
-    export FOX_RESET_SETTINGS=0
+    export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
 
 	# Let's see which are our build vars
     if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then

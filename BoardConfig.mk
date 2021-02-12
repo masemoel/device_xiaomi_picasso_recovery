@@ -2,7 +2,7 @@
 # Copyright (C) 2020 The Android Open Source Project
 # Copyright (C) 2020 PitchBlack Recovery Project
 # Copyright (C) 2021 OrangeFox Recovery Project
-# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator 
+# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -122,8 +122,6 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
-TW_Y_OFFSET := 70
-TW_H_OFFSET := -70
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
@@ -131,6 +129,8 @@ TARGET_USES_MKE2FS := true
 TW_NO_SCREEN_BLANK := true
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TW_EXTRA_LANGUAGES := true
+TW_Y_OFFSET := 91
+TW_H_OFFSET := -91
 TW_SCREEN_BLANK_ON_BOOT := false
 TW_DELAY_TOUCH_INIT_MS := 1000
 
