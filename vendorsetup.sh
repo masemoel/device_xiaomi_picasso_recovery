@@ -39,7 +39,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
     export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
-    export OF_DISABLE_DM_VERITY=1
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
     export FOX_DISABLE_APP_MANAGER=1
     export OF_MAINTAINER=masemoel
@@ -70,6 +69,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_ASH_IS_BASH=1
     export FOX_USE_TAR_BINARY=1
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
+    export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
 
 	# Let's see which are our build vars
     if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
