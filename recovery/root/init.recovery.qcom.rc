@@ -1,5 +1,7 @@
 # Copyright (c) 2009-2012, 2014-2015, The Linux Foundation. All rights reserved.
 #
+# Copyright (C) 2020-2021 The OrangeFox Recovery Project
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
 #     * Redistributions of source code must retain the above copyright
@@ -45,8 +47,6 @@ on init
     mkdir /data/media
     start hwservicemanager
     setprop crypto.ready 1
-    chmod 0777 /init.recovery.qcom.sh
-    start init-recovery-qcom-sh
 
 service sbinqseecomd /sbin/qseecomd
     user root
@@ -91,13 +91,6 @@ service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
     user root
     group root
     disabled
-    seclabel u:r:recovery:s0
-
-service init-recovery-qcom-sh /init.recovery.qcom.sh
-    user root
-    group root
-    disabled
-    oneshot
     seclabel u:r:recovery:s0
 
 on boot
