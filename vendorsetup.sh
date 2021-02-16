@@ -1,3 +1,4 @@
+
 #
 #	This file is part of the OrangeFox Recovery Project
 # 	Copyright (C) 2021 The OrangeFox Recovery Project
@@ -63,12 +64,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_TARGET_DEVICES=picasso,picasso_48m
     export OF_USE_GREEN_LED=0
     export FOX_DELETE_AROMAFM=1
+    export OF_SPLASH_MAX_SIZE=104
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
     export FOX_USE_BASH_SHELL=1
     export FOX_ASH_IS_BASH=1
     export FOX_USE_TAR_BINARY=1
-	export FOX_USE_XZ_UTILS=1
+    export FOX_USE_XZ_UTILS=1
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
     export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
 
