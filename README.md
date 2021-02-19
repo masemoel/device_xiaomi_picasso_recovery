@@ -1,4 +1,4 @@
-![OFRP](https://comments.bot/userpic/709d26cf27f7ff8638f6c.jpg "OFRP")
+![OFRP](https://image.ibb.co/cTMWux/logo.jpg "OFRP")
 
 OrangeFox Recovery Project (OFRP) R11 for Redmi K30 5G (picasso)
 ======================================
