@@ -42,6 +42,7 @@ on early-fs
 on init
     mkdir /tmp/install
     mkdir /tmp/install/bin
+    mkdir /data/media
     start hwservicemanager
     setprop crypto.ready 1
     chmod 0777 /init.recovery.qcom.sh
