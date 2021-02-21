@@ -36,7 +36,7 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := picasso, picasso_48m
+TARGET_OTA_ASSERT_DEVICE := picasso
 
 # Bootloader
 PRODUCT_PLATFORM := sm7250
