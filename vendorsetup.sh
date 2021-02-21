@@ -35,7 +35,6 @@ fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export TARGET_ARCH=arm64
-    export FOX_USE_NANO_EDITOR=1
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
     export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
@@ -58,7 +57,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_ADVANCED_SECURITY=1
     export OF_NO_SAMSUNG_SPECIAL=1
     export FOX_INSTALLER_DEBUG_MODE=1
-    export FOX_R11=1
     export OF_USE_TWRP_SAR_DETECT=1
     export OF_TARGET_DEVICES=picasso,picasso_48m
     export OF_USE_GREEN_LED=0
