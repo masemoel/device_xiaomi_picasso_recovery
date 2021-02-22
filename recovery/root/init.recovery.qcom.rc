@@ -44,7 +44,6 @@ on early-fs
 on init
     mkdir /tmp/install
     mkdir /tmp/install/bin
-    mkdir /data/media
     start hwservicemanager
     setprop crypto.ready 1
 
