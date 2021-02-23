@@ -17,5 +17,11 @@ umount /odm > /dev/null
 umount /system_ext > /dev/null
 umount /system_root > /dev/null
 
+sleep 1
+mkdir /data/media
+mkdir /data/media/0
+mkdir /tmp/install
+mkdir /tmp/install/bin
+
 exit 0
 #
