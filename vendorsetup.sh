@@ -44,9 +44,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_VERSION=R11.0_1.5-A11
     export FOX_BUILD_TYPE="Official beta"
     export OF_SCREEN_H=2460
-    export OF_STATUS_H=125
+    export OF_STATUS_H=122
     export OF_STATUS_INDENT_LEFT=35
-    export OF_STATUS_INDENT_RIGHT=233
+    export OF_STATUS_INDENT_RIGHT=235
     export OF_HIDE_NOTCH=1
     export OF_ALLOW_DISABLE_NAVBAR=0
     export OF_PATCH_AVB20=1
