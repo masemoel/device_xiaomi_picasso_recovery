@@ -68,6 +68,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SPLASH_MAX_SIZE=104
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
+    export FOX_USE_SPECIFIC_MAGISK_ZIP="~/magisk/Magisk22.0.zip"
     export FOX_USE_BASH_SHELL=1
     export FOX_ASH_IS_BASH=1
     export FOX_USE_TAR_BINARY=1
