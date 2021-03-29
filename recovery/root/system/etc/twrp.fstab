@@ -47,4 +47,4 @@ odm               /odm        ext4                                       display
 /devcfg           emmc        /dev/block/bootdevice/by-name/devcfg       flags=display="Devcfg";backup=1;flashimg=1
 
 # Removable storage
-/usb-otg          vfat        /dev/block/sdg1  /dev/block/sdg            flags=backup=1;display="USB-OTG";storage;wipeingui;removable;fsflags="utf8"
+/usb-otg          auto        /dev/block/sdg1  /dev/block/sdg            flags=backup=1;display="USB-OTG";storage;wipeingui;removable;fsflags="utf8"
