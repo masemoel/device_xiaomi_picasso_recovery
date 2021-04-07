@@ -26,6 +26,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     android.hardware.fastboot@1.0-impl-mock.recovery
 
+# OEM otacert
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    vendor/recovery/security/miui
+
 # QCOM decryption
 PRODUCT_PACKAGES_ENG += \
     qcom_decrypt \
