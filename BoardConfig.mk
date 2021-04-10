@@ -53,7 +53,7 @@ QCOM_BOARD_PLATFORMS += sm7250
 TARGET_USES_HARDWARE_QCOM_BOOTCTRL := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 cgroup.memory=nokmem,nosocket androidboot.usbconfigfs=true androidboot.selinux=permissive androidboot.boot_devices=soc/1d84000.ufshc
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 cgroup.memory=nokmem,nosocket androidboot.usbconfigfs=true androidboot.selinux=permissive androidboot.boot_devices=soc/1d84000.ufshc androidboot.fastboot=1
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_PAGESIZE := 4096
