@@ -70,11 +70,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
     export FOX_USE_SPECIFIC_MAGISK_ZIP="~/magisk/Magisk22.0.zip"
+    export FOX_REPLACE_BUSYBOX_PS=0
     export FOX_USE_BASH_SHELL=1
     export FOX_ASH_IS_BASH=1
     export FOX_USE_TAR_BINARY=1
     export FOX_USE_XZ_UTILS=1
     export FOX_USE_SED_BINARY=1
+    export FOX_SKIP_ZIP_BINARY=1
+    export FOX_USE_LZMA_COMPRESSION=1
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
     export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
 
