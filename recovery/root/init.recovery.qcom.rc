@@ -37,13 +37,3 @@ on property:sys.usb.config=fastboot
     start servicemanager
     start hwservicemanager
     restart fastbootd
-
-service prepdecrypt /sbin/prepdecrypt.sh
-    user root
-    group root
-    disabled 
-    oneshot
-    seclabel u:r:recovery:s0
-
-on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
-    start prepdecrypt
