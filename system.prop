@@ -13,3 +13,4 @@ ro.sf.lcd_density=385
 ro.treble.enabled=true
 ro.boot.avb_version=1.0
 ro.boot.vbmeta.avb_version=1.0
+ro.twrp.sar=true
