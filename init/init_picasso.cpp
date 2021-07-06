@@ -41,7 +41,7 @@ namespace android {
 namespace init {
 
 using android::base::GetProperty;
-using android::init::property_set;
+using android::base::SetProperty;
 
 void property_override(const std::string& name, const std::string& value)
 {
@@ -54,7 +54,7 @@ void property_override(const std::string& name, const std::string& value)
     else {
         int rc = __system_property_add(name.c_str(), name.size(), value.c_str(), valuelen);
         if (rc < 0) {
-            LOG(ERROR) << "property_set(\"" << name << "\", \"" << value << "\") failed: "
+            LOG(ERROR) << "SetProperty(\"" << name << "\", \"" << value << "\") failed: "
                        << "__system_property_add failed";
         }
     }
