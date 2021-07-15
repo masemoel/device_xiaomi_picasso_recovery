@@ -143,6 +143,7 @@ TW_NO_LEGACY_PROPS := true
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 TW_INCLUDE_RESETPROP := true
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone4/temp"
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
