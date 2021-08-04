@@ -16,7 +16,7 @@ odm               /odm           ext4                                       flag
 /product_image    emmc           /dev/block/mapper/product                  flags=display="Product";flashimg=1;backup=1
 /odm_image        emmc           /dev/block/mapper/odm                      flags=display="ODM";flashimg=1;backup=1
 /cache            ext4           /dev/block/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
-/data             f2fs           /dev/block/bootdevice/by-name/userdata     flags=fileencryption=ice:aes-256-cts;wrappedkey;keydirectory=/metadata/vold/metadata_encryption;encryptable=footer
+/data             f2fs           /dev/block/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v2+emmc_optimized+wrappedkey_v0;wrappedkey;keydirectory=/metadata/vold/metadata_encryption;encryptable=footer
 /boot             emmc           /dev/block/bootdevice/by-name/boot         flags=backup=1;flashimg=1
 /storage          ext4           /data/media/0                              flags=display="Internal Storage";usermrf;backup=1;fsflags="bind"
 /dtbo             emmc           /dev/block/bootdevice/by-name/dtbo         flags=display="DTBO";backup=1;flashimg=1
