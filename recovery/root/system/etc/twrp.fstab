@@ -10,11 +10,11 @@ system_ext        /system_ext    ext4                                       flag
 vendor            /vendor        ext4                                       flags=display="Vendor"
 product           /product       ext4                                       flags=display="Product"
 odm               /odm           ext4                                       flags=display="ODM"
-/system           emmc           /dev/block/mapper/system                   flags=display="System";flashimg=1;backup=1
-/system_ext       emmc           /dev/block/mapper/system_ext               flags=display="System_EXT";flashimg=1;backup=1
-/vendor           emmc           /dev/block/mapper/vendor                   flags=display="Vendor";flashimg=1;backup=1
-/product          emmc           /dev/block/mapper/product                  flags=display="Product";flashimg=1;backup=1
-/odm              emmc           /dev/block/mapper/odm                      flags=display="ODM";flashimg=1;backup=1
+/system           emmc           /dev/block/mapper/system                   flags=display="System image";flashimg=1;backup=1
+/system_ext       emmc           /dev/block/mapper/system_ext               flags=display="System_EXT image";flashimg=1;backup=1
+/vendor           emmc           /dev/block/mapper/vendor                   flags=display="Vendor image";flashimg=1;backup=1
+/product          emmc           /dev/block/mapper/product                  flags=display="Product image";flashimg=1;backup=1
+/odm              emmc           /dev/block/mapper/odm                      flags=display="ODM image";flashimg=1;backup=1
 /cache            ext4           /dev/block/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
 /data             f2fs           /dev/block/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v2+emmc_optimized+wrappedkey_v0;wrappedkey;keydirectory=/metadata/vold/metadata_encryption;encryptable=footer
 /boot             emmc           /dev/block/bootdevice/by-name/boot         flags=backup=1;flashimg=1
