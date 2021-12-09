@@ -150,6 +150,7 @@ TARGET_SCREEN_WIDTH := 1080
 TW_INCLUDE_RESETPROP := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone4/temp"
 TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_APEX := true
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
