@@ -71,7 +71,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SPLASH_MAX_SIZE=104
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
-    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/masemoel/Escritorio/ROMs/fox_10.0/device/xiaomi/picasso/magisk/Magisk-v23.0.zip"
+    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/masemoel/Escritorio/ROMs/fox_10.0/device/xiaomi/picasso/magisk/Magisk-v24.1.zip"
     export FOX_REPLACE_BUSYBOX_PS=0
     export FOX_USE_BASH_SHELL=1
     export FOX_ASH_IS_BASH=1
