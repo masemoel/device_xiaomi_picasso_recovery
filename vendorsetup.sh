@@ -64,12 +64,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_ADVANCED_SECURITY=1
     export OF_NO_SAMSUNG_SPECIAL=1
     export FOX_INSTALLER_DEBUG_MODE=1
-    export OF_USE_TWRP_SAR_DETECT=1
     export OF_TARGET_DEVICES=picasso,picasso_48m
     export OF_USE_GREEN_LED=0
     export FOX_DELETE_AROMAFM=1
-    export OF_SPLASH_MAX_SIZE=104
-    export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
     export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/masemoel/Escritorio/ROMs/fox_10.0/device/xiaomi/picasso/magisk/Magisk-v24.3.zip"
     export FOX_REPLACE_BUSYBOX_PS=0
@@ -78,7 +75,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_USE_TAR_BINARY=1
     export FOX_USE_XZ_UTILS=1
     export FOX_USE_SED_BINARY=1
-    export FOX_SKIP_ZIP_BINARY=1
     export FOX_USE_LZMA_COMPRESSION=1
     export OF_ENABLE_LPTOOLS=1
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
