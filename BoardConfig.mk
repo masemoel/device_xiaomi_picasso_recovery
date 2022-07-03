@@ -142,6 +142,7 @@ TW_INCLUDE_LIBRESETPROP := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone4/temp"
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_APEX := true
+TW_FRAMERATE := 120
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
