@@ -29,6 +29,13 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+service wrapped-key /system/bin/wrappedkey-fix.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
     write /sys/class/leds/vibrator/trigger "transient"
@@ -49,3 +56,7 @@ on property:sys.usb.config=fastboot
     start servicemanager
     start hwservicemanager
     restart fastbootd
+
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    chmod 0777 /system/bin/wrappedkey-fix.sh
+    start wrapped-key
