@@ -5,11 +5,11 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
 # <mount_point>   <fstype>       <device>         <device2>                 <flags>
-system            /system_root   ext4                                       flags=display="System"
-system_ext        /system_ext    ext4                                       flags=display="System_EXT"
-vendor            /vendor        ext4                                       flags=display="Vendor"
-product           /product       ext4                                       flags=display="Product"
-odm               /odm           ext4                                       flags=display="ODM"
+system            /system        ext4                                       flags=display="System",logical
+system_ext        /system_ext    ext4                                       flags=display="System_EXT",logical
+vendor            /vendor        ext4                                       flags=display="Vendor",logical
+product           /product       ext4                                       flags=display="Product",logical
+odm               /odm           ext4                                       flags=display="ODM",logical
 /cache            ext4           /dev/block/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
 /data             f2fs           /dev/block/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v2+emmc_optimized+wrappedkey_v0;wrappedkey;keydirectory=/metadata/vold/metadata_encryption;encryptable=footer
 /boot             emmc           /dev/block/bootdevice/by-name/boot         flags=backup=1;flashimg=1
