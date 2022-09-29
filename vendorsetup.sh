@@ -80,6 +80,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_FORCE_MAGISKBOOT_BOOT_PATCH_MIUI=1
     export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
     export OF_SKIP_DECRYPTED_ADOPTED_STORAGE=1
+    export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
 
 	# Let's see which are our build vars
     if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
