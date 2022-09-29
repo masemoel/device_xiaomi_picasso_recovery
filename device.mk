@@ -25,6 +25,10 @@ DEVICE_PATH := device/xiaomi/picasso
 PRODUCT_HOST_PACKAGES += \
     libandroidicu
 
+# DTB
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/dtb:dtb.img
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
