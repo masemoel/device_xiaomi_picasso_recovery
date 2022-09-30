@@ -38,11 +38,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/recovery/security/miui
 
-# QCOM decryption
-PRODUCT_PACKAGES_ENG += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
-
 # Stock flashable zips
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.allow.mock.location=1

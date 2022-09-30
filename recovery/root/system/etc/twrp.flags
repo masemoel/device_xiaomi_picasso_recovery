@@ -11,7 +11,8 @@ vendor            /vendor        ext4                                       flag
 product           /product       ext4                                       flags=display="Product",logical
 odm               /odm           ext4                                       flags=display="ODM",logical
 /cache            ext4           /dev/block/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
-/data             f2fs           /dev/block/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v2+emmc_optimized+wrappedkey_v0;wrappedkey;keydirectory=/metadata/vold/metadata_encryption;encryptable=footer
+/metadata         ext4           /dev/block/by-name/metadata                flags=display="Metadata";backup=1;wipeingui
+/data             f2fs           /dev/block/bootdevice/by-name/userdata     flags=fileencryption=ice;wrappedkey
 /boot             emmc           /dev/block/bootdevice/by-name/boot         flags=backup=1;flashimg=1
 /storage          ext4           /data/media/0                              flags=display="Internal Storage";usermrf;backup=1;fsflags="bind"
 /dtbo             emmc           /dev/block/bootdevice/by-name/dtbo         flags=display="DTBO";backup=1;flashimg=1
@@ -21,7 +22,6 @@ odm               /odm           ext4                                       flag
 /bt_firmware      vfat           /dev/block/bootdevice/by-name/bluetooth    flags=display="Bluetooth";backup=1;flashimg=1
 /dsp              ext4           /dev/block/bootdevice/by-name/dsp          flags=display="DSP";backup=1;flashimg=1
 /cust             ext4           /dev/block/bootdevice/by-name/cust         flags=display="Cust";backup=1;flashimg=1
-/metadata         ext4           /dev/block/by-name/metadata                flags=display="Metadata";backup=1;flashimg=1;wrappedkey;wipeingui
 /splash           emmc           /dev/block/bootdevice/by-name/splash       flags=display="Splash";backup=1;flashimg=1
 /logo             emmc           /dev/block/bootdevice/by-name/logo         flags=display="Logo";backup=1;flashimg=1
 /tz               emmc           /dev/block/bootdevice/by-name/tz           flags=display="TZ";backup=1;flashimg=1
