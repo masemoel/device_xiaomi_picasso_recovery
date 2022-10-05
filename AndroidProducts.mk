@@ -18,6 +18,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/omni_picasso.mk
+	$(LOCAL_DIR)/twrp_picasso.mk
 
-COMMON_LUNCH_CHOICES := omni_picasso-eng
+COMMON_LUNCH_CHOICES := twrp_picasso-eng

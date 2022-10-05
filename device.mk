@@ -21,10 +21,6 @@ PRODUCT_RELEASE_NAME := picasso
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/picasso
 
-# Apex libraries
-PRODUCT_HOST_PACKAGES += \
-    libandroidicu
-
 # DTB
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/dtb:dtb.img
@@ -32,7 +28,8 @@ PRODUCT_COPY_FILES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    fastbootd
 
 # OEM otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \
@@ -41,7 +38,3 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 # Stock flashable zips
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.allow.mock.location=1
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
