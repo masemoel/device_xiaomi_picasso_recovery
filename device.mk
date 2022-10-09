@@ -21,6 +21,8 @@ PRODUCT_RELEASE_NAME := picasso
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 DEVICE_PATH := device/xiaomi/picasso
 
+PRODUCT_SHIPPING_API_LEVEL := 29
+
 # DTB
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/dtb:dtb.img
