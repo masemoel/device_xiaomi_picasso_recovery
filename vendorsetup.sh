@@ -44,6 +44,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_MAINTAINER=masemoel
     export FOX_VERSION=R11.1_2.1
     export FOX_BUILD_TYPE="Stable"
+    export FOX_VARIANT=A12
     export OF_SCREEN_H=2460
     export OF_STATUS_H=122
     export OF_STATUS_INDENT_LEFT=35
