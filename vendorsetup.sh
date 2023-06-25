@@ -61,11 +61,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_OTA_BACKUP_STOCK_BOOT_IMAGE=1
     export OF_RUN_POST_FORMAT_PROCESS=1
     export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-    export FOX_ADVANCED_SECURITY=1
-    export OF_NO_SAMSUNG_SPECIAL=1
+    export OF_ADVANCED_SECURITY=1
+    export FOX_NO_SAMSUNG_SPECIAL=1
     export FOX_ENABLE_APP_MANAGER=1
     export FOX_INSTALLER_DEBUG_MODE=1
-    export OF_TARGET_DEVICES=picasso,picasso_48m
+    export FOX_TARGET_DEVICES=picasso,picasso_48m
     export OF_USE_GREEN_LED=0
     export FOX_DELETE_AROMAFM=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
@@ -74,6 +74,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_REPLACE_BUSYBOX_PS=0
     export FOX_USE_BASH_SHELL=1
     export FOX_ASH_IS_BASH=1
+    export FOX_USE_NANO_EDITOR=1
     export FOX_USE_TAR_BINARY=1
     export FOX_USE_XZ_UTILS=1
     export FOX_USE_SED_BINARY=1
