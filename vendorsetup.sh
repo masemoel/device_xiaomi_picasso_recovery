@@ -63,6 +63,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
     export FOX_ADVANCED_SECURITY=1
     export OF_NO_SAMSUNG_SPECIAL=1
+    export FOX_ENABLE_APP_MANAGER=1
     export FOX_INSTALLER_DEBUG_MODE=1
     export OF_TARGET_DEVICES=picasso,picasso_48m
     export OF_USE_GREEN_LED=0
