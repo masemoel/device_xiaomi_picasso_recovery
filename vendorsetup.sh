@@ -69,7 +69,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_USE_GREEN_LED=0
     export FOX_DELETE_AROMAFM=1
     export OF_QUICK_BACKUP_LIST="/boot;/dtbo;"
-    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/masemoel/Escritorio/ROMs/fox_12.1/device/xiaomi/picasso/magisk/Magisk-v26.1.zip"
+    export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/masemoel/Escritorio/ROMs/fox_12.1/device/xiaomi/picasso/magisk/Magisk-v26.4.zip"
     export OF_FORCE_PREBUILT_KERNEL=1
     export FOX_REPLACE_BUSYBOX_PS=0
     export FOX_USE_BASH_SHELL=1
