@@ -42,7 +42,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
     export FOX_DISABLE_APP_MANAGER=1
     export OF_MAINTAINER=masemoel
-    export FOX_VERSION=R11.1_2.3
+    export FOX_VERSION=R11.1_2.4
     export FOX_BUILD_TYPE="Stable"
     export FOX_VARIANT=A12
     export OF_SCREEN_H=2460
