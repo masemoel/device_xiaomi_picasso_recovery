@@ -144,7 +144,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone19/temp"
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_APEX := true
 TW_FRAMERATE := 120
-TW_BACKUP_EXCLUSIONS := /data/fonts
+TW_BACKUP_EXCLUSIONS := /data/fonts,/data/adb/ap,/data/adb/ksu
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
