@@ -1,6 +1,6 @@
 ![OFRP](https://image.ibb.co/cTMWux/logo.jpg "OFRP")
 
-OrangeFox Recovery Project (OFRP) R11.1 for Redmi K30 5G (picasso)
+OrangeFox Recovery Project (OFRP) R11.3 for Redmi K30 5G (picasso)
 ======================================
 
 # How to build
@@ -18,7 +18,8 @@ Download OFRP's source and picasso's repos. Your local manifest should be someth
 Then go to the source folder and run:
 
 ```bash
-. build/envsetup.sh && lunch twrp_picasso-eng && mka recoveryimage
+. build/envsetup.sh
+lunch twrp_picasso-eng && mka recoveryimage
 ```
 
 # Device specifications
